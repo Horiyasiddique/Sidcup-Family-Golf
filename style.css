@@ -1,0 +1,498 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+    color: #fff;
+
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    perspective: 800;
+}
+
+*::selection {
+    background-color: #fff;
+    color: #95C11E;
+}
+
+body::-webkit-scrollbar {
+    display: block;
+    background-color: #95C11E;
+    width: 8px;
+
+}
+
+body::-webkit-scrollbar-thumb {
+    display: block;
+    background-color: #fff;
+    border-radius: 1vw;
+    cursor: grab;
+}
+
+/*navbar styling*/
+#nav {
+    width: 100vw;
+    height: 14vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5vw;
+    padding: 0 6vw;
+    z-index: 99;
+    position: fixed;
+}
+
+#nav img {
+    height: 10vh;
+}
+
+#nav i {
+    display: none;
+
+}
+
+h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/*Custom cursor styling*/
+#cursor {
+    width: 2vw;
+    height: 2vw;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+
+}
+
+/*Custom cursor blur styling*/
+#cursor-blur {
+    width: 300px;
+    height: 300px;
+    background-color: #96c11e42;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(43px);
+    z-index: 9;
+
+}
+
+/*video styling for hero page*/
+video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+/*main div parent of all divs[pages]*/
+#main {
+    position: relative;
+    background-color: #00000036;
+}
+
+#page1 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.7vw;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 #arrow {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    border: 1.8px solid #95C11E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -2%;
+    bottom: 0;
+    transition: all ease 0.6s;
+}
+
+#page1 #arrow i {
+    font-size: 3vw;
+    font-weight: 100;
+}
+
+#page1 #arrow:hover {
+    scale: 0.6;
+    font-size: 3.6;
+    background-color: #95C11E;
+}
+
+#page1 h1 {
+    font-size: 6.99vw;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before {
+    content: 'EAT. DRINK. PLAY.';
+    color: #000;
+    position: absolute;
+    z-index: -1;
+    top: -4px;
+    left: -4px;
+    -webkit-text-stroke: 1px #95C11E;
+}
+
+#page1 h2 {
+    font-size: 2vw;
+    font-weight: 800;
+}
+
+#page1 p {
+    font-size: 1.2vw;
+    font-weight: 400;
+    width: 40%;
+}
+
+/* Page 2 styling */
+#page2 {
+    width: 100%;
+    min-height: 100vh;
+    z-index: 10;
+}
+
+/* Scrolling text animation */
+#scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollingText 22s linear infinite;
+}
+
+
+#scroller h4 {
+    display: inline-block;
+    color: transparent;
+    font-size: 7vw;
+    font-weight: 900;
+    margin-left: 12px;
+    -webkit-text-stroke: 2px #95C11E;
+}
+
+#scroller h4:hover {
+    color: #95C11E;
+    transition: all linear 0.3s;
+}
+
+@keyframes scrollingText {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/*about us section styling*/
+#about-us {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+#about-us #img1 {
+    width: 10vw;
+    height: 10vw;
+    object-fit: cover;
+    border-radius: 1vw;
+}
+
+#about-us #img2 {
+    width: 10vw;
+    height: 14vw;
+    object-fit: cover;
+    border-radius: 1vw;
+}
+
+#about-us-in {
+    width: 50%;
+
+}
+
+#about-us-in h3 {
+    font-size: 3.2vw;
+    font-weight: 800;
+    margin-bottom: 1vw;
+}
+
+#about-us-in p {
+    font-size: 1.3vw;
+    line-height: 1.5vw;
+
+}
+
+/*card container styling*/
+#card-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5.6vw;
+    position: relative;
+    z-index: 10;
+}
+
+.cards {
+    width: 23%;
+    height: 80%;
+    background-color: blue;
+    border-radius: 1.2vw;
+    background-position: center;
+    overflow: hidden;
+    background-size: cover;
+    transition: all ease 0.6s;
+
+}
+
+#card1 {
+    background-image: url('https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1');
+}
+
+#card2 {
+    background-image: url('https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1');
+}
+
+#card3 {
+    background-image: url('https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1');
+}
+
+.overlay {
+    background-color: #95C11E;
+    width: 100%;
+    height: 100%;
+    padding-top: 8vw;
+    padding-left: 1.5vw;
+    border-radius: 1vw;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+.overlay h4 {
+    font-size: 2.3vw;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 1.7vw;
+
+}
+
+.overlay p {
+    font-size: 1.3vw;
+    font-weight: 100;
+    line-height: 1.8vw;
+    color: #212121;
+
+}
+
+.cards:hover .overlay {
+    opacity: 1;
+}
+
+.cards:hover {
+    transform: rotate3d(1, 1, 0, 20deg);
+}
+
+#green-div {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #95C11E;
+
+}
+
+#green-div img {
+    width: 16%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+#green-div h4 {
+    font-size: 1.8vw;
+    line-height: 2.7vw;
+    text-align: center;
+    width: 60%;
+    color: #000;
+    font-weight: 900;
+}
+
+#page3 {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#page3>p {
+    width: 65%;
+    text-align: center;
+    font-size: 1.8vw;
+    font-weight: 700;
+    line-height: 2.5vw;
+    color: #fff;
+
+}
+
+#page3 img {
+    position: absolute;
+    height: 4vw;
+}
+
+#page3 #quote1 {
+    top: 25%;
+    left: 15%;
+}
+
+#page3 #quote2 {
+    bottom: 30%;
+    right: 17%;
+}
+
+#page4 {
+    max-width: 100%;
+    height: 30vh;
+    display: flex;
+    background-color: #000;
+    justify-content: center;
+    align-items: center;
+    gap: 2.3vw;
+    position: relative;
+
+}
+
+.elem {
+    width: 27%;
+    height: 70%;
+    border-radius: 1vw;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.elem h2 {
+    height: 100%;
+    width: 100%;
+    color: #000;
+    background-color: #95C11E;
+    transition: all ease 0.9s;
+    font-size: 2vw;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+
+}
+
+.elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+    scale: 1.1;
+
+}
+
+
+.elem:hover h2 {
+    color: #fff;
+    background-color: transparent;
+}
+
+.elem:hover img {
+    scale: 1;
+}
+
+#page4 h1 {
+    font-size: 5.2vw;
+    color: #000;
+    -webkit-text-stroke: 0.8px #fff;
+    font-weight: 900;
+    position: absolute;
+    top: -11.8%;
+}
+
+/* footer styling */
+#footer {
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    background: linear-gradient(to left bottom, #119F3A, #ACE022);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6vw;
+    padding: 0 5vw;
+
+}
+
+#footer>img {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 0;
+}
+
+#f1 img {
+    height: 5vw;
+}
+
+#f1,
+#f2,
+#f3,
+#f4 {
+    width: fit-content;
+    z-index: 2;
+    position: relative;
+}
+
+.fheadings {
+    font-size: 1.4vw;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 1vw;
+    white-space: nowrap;
+
+}
